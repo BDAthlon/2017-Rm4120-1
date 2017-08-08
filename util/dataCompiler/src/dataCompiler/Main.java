@@ -19,6 +19,7 @@ public class Main {
 		int endList = inputFiles.size();
 		int idVal = 0;
 		String idKey = "{\"glyph__idName\": ";
+		String metaIdKey = "\"glyph__metaId\": \"";
 
 		String nameKey = "\"glyph__type\": \"";
 		String glyphType = "promoter";
@@ -33,9 +34,10 @@ public class Main {
 
 		for(String file : inputFiles)
 		{
-			String tempId = idKey + file ;
+			String tempId = idKey + idVal++ ;
+			String metaId = metaIdKey + file + "\"";
 			String tempName = nameKey + glyphType + "\"";
-			String stitch = tempId + "," + tempName;
+			String stitch = tempId + "," + metaId + "," + tempName;
 			outputContent = outputContent + stitch + "}";
 			endList--;
 			
