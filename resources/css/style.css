@@ -1,0 +1,424 @@
+
+
+h1 {
+    font-family: "Arvo";
+    font-size:35px;
+    color: #464646;
+    margin: 0px;
+    padding: 0px;
+    margin-left: 20px;
+}
+.sideBar {
+    display: inline-block;
+    width: 30%;
+    float:right;
+}
+.d3-tip {
+    /*line-height: 5;*/
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 150px;
+    border-style: groove;
+    /*padding: 12px;*/
+    background: #FFFFFF;
+    color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    pointer-events: none;
+}
+.tooltip-title{
+    font-size:14px;
+    font-family: "serif";
+    word-wrap: break-word;
+    font-style: italic;
+}
+
+.tooltip-row{
+    font-size:10px;
+    font-family: "Arial Black";
+
+}
+
+.drugCircle{
+    stroke-width: 2px;
+    stroke: #e6e6e6;
+}
+
+.interCircle{
+    fill: #008000;
+    stroke-width: 2px;
+    stroke: #e6e6e6;
+}
+
+.sideEffectCircle{
+    fill: #e60000;
+    stroke-width: 0.1px;
+}
+
+
+.selectCircle{
+    stroke: #404040;
+    stroke-width:4;
+}
+
+.highlightCircle{
+    stroke: #404040;;
+    stroke-width:4;
+}
+
+.highlightInterLine{
+    fill: none;
+    stroke: #000000;
+    stroke-width: 4px;
+}
+
+.defaultInterLine{
+    fill: none;
+    stroke: #999999;
+    stroke-width: 2px;
+}
+
+#age-chart, #sex-chart, #weight-chart, #treatments-chart
+{
+    float: left;
+}
+.bgLine{
+    stroke: #e6e6e6;
+    stroke-width: 10px;
+}
+
+.axis {
+    font: 8px sans-serif;
+}
+
+#dropDown {
+    position:absolute;
+    left: 10px;
+}
+
+#PharmVizLogo{
+    margin: auto;
+    display: block;
+    width: 50%;
+    height: 30%;
+}
+
+#PharmVizIcon{
+    width: 3%;
+    height: 5%;
+}
+
+
+.site-nav{
+    color: #727272;
+    letter-spacing: -.5px;
+}
+
+.page-link{
+    font: 20px Geneva;
+    fill: black;
+}
+
+#age-chart rect {
+    fill: #00b386;
+}
+
+#weight-chart rect {
+    fill: #FFC300  ;
+}
+
+.bars text {
+    fill: #fff;
+    font: 10px sans-serif;
+}
+
+.femaleDonut {
+    fill: #ff4dc4;
+}
+
+.maleDonut {
+    fill: #4dc3ff;
+}
+
+.donuts text {
+    fill: #fff;
+    font: 20px sans-serif;
+}
+
+.drugRemovalDefault rect {
+    fill: #EEEEEE;
+    stroke-width: 2px;
+    stroke: #666666;
+}
+
+.drugRemovalDefault text {
+    fill: #666666;
+    font: 14px sans-serif;
+}
+
+.drugRemovalHighlighted rect{
+    stroke-width: 2px;
+    stroke: #000;
+}
+
+
+.drugRemovalHighlighted rect, .drugCircle{
+    fill: #c4ff4d;
+}
+
+.drugRemovalHighlighted text {
+    fill: #fff;
+    font: 14px sans-serif;
+}
+
+.effectTriangle{
+    fill: #e60000;
+    stroke-width: 2px;
+    stroke: #e6e6e6;
+}
+
+
+
+
+.projectHeader
+{
+    margin-bottom: 25px;
+}
+
+.node circle {
+    fill: #fff;
+    stroke: #ff9900;
+    stroke-width: 3px;
+}
+
+.node text {
+    font: 12px sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+}
+
+#drug-selection{
+    margin-top: 25px;
+    clear: left;
+}
+
+
+#drug-search {
+    width: 194px;
+    margin: auto;
+    display: block;
+}
+
+.filter
+{
+    margin-top: 25px;
+    width: 194px;
+}
+
+.filter p{
+    font-size:12px;
+    font-family: "Arial Black";
+    text-align:center;
+
+}
+
+
+/* Toggle */
+.onoffswitch {
+    float: right;
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 10px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #666666; color: #ffffff;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}
+
+.footerSection
+{
+    font-size:12px;
+    font-family: "Arial Black";
+}
+
+#col1 , #col2, #col3{
+    /*position: absolute;*/
+    /*left:10%;*/
+    width:33%;
+    float: left;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+#githubLogo{
+    width: 10%;
+    height: 5%;
+}
+
+.wrapper:after {
+    content: "";
+    display: block;
+}
+.footerSection, .wrapper:after{
+    height: 102px;
+}
+.footerSection{
+    background: #e6e6e6;
+}
+
+html {
+    height: 100%;
+    margin: 3%;
+}
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.wrapper {
+    flex: 1;
+}
+
+a:link {
+    text-decoration: underline;
+    color: #737373;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #737373;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #808080;
+}
+
+a:active {
+    text-decoration: underline;
+    color: #737373;
+}
+
+.site-nav {
+    text-align:center;
+
+}
+
+
+.menu a + a{
+    margin-left: 50px;
+
+}
+
+.logo
+{
+    margin-bottom: 10px;
+}
+
+.contentBackground{
+    font-style: italic;
+    font-family: "Lucida Console";
+    text-align:center;
+}
+
+.aboutText{
+    font-family: "Arial";
+    text-align:center;
+}
+
+
+.warningText{
+    font-family: "Arial";
+    text-align:center;
+    font-size: 85%;
+}
+
+#information-chart {
+    clear: both;
+}
+
+.chartLabel, .label h3, #drug-selection-value{
+    font-family: "Arial";
+}
+
+
+.chartLabel, .label h3, #drug-selection-label{
+    fill: #000;
+}
+
+.chartLabel
+ {
+    font-size: 14px;
+    font-weight: bold;
+}
+#drug-selection-label
+{
+    font-size: 18px;
+    font-family: "Arial Black";
+}
+
+
+#drug-selection-value
+{
+    font-size: 18px;
+}
+
+#treatments-label {
+    float: left;
+    width: 66%;
+}
+
+#interaction-legend
+{
+    text-align: center;
+}
+
+#demo{
+    margin: auto;
+    text-align:center;
+    display: block;
+
+}
