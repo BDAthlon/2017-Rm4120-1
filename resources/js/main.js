@@ -16,24 +16,24 @@
             .await(function(error, data1){
                 var idMap = {};
                 var dataMap = {};
-
+                var metaIdMap = {};
 
                 var maxId = data1[data1.length - 1].glyph__idName+1;
 
-                data1.forEach(function(d) {dataMap[d.glyph__idName] = d; idMap[d.glyph__type] = d.glyph__idName});
+                data1.forEach(function(d) {dataMap[d.glyph__idName] = d; idMap[d.glyph__type] = d.glyph__idName; metaIdMap[d.glyph__metaId] = d.glyph__idName});
 
                 //Creating instances for each visualization
-                var glyphFunctions = new GlyphFunctions();
+                var glyphFunctions = new GlyphFunctions(dataMap);
                 var options = {
                     url: "../resources/data/promoters.json",
-                    getValue: "glyph__type",
+                    getValue: "glyph__metaId",
                     list: {
                         match: {
                             enabled: true
                         },
                         onClickEvent: function()
                         {
-                            glyphFunctions.add($("#glyph-search-box").getValue());
+                            glyphFunctions.add($("#glyph-search-box").val());
                         },
                         maxNumberOfElements: 100
                     },

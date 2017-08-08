@@ -7,8 +7,14 @@ function GlyphFunctions(_id) {
 
 }
 
-InteractionChart.prototype.init = function() {
+GlyphFunctions.prototype.init = function() {
 
     var self = this;
-    Console.log(self.id);
-}
+
+};
+
+
+GlyphFunctions.prototype.add = function(idName) {
+    var self = this;
+    console.log(idName);
+};
