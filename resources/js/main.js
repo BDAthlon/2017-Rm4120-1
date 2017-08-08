@@ -12,24 +12,28 @@
 
 
         d3.queue()
-            .defer(d3.json, '../resources/data/glyphs.json')
+            .defer(d3.json, '../resources/data/promoters.json')
             .await(function(error, data1){
                 var idMap = {};
                 var dataMap = {};
 
 
-                var maxId = data1[data1.length - 1]._glyph__id+1;
+                var maxId = data1[data1.length - 1].glyph__idName+1;
 
-                data1.forEach(function(d) {dataMap[d._glyph__id] = d; idMap[d.glyph__name] = d._glyph__id});
+                data1.forEach(function(d) {dataMap[d.glyph__idName] = d; idMap[d.glyph__type] = d.glyph__idName});
 
                 //Creating instances for each visualization
-
+                var glyphFunctions = new GlyphFunctions();
                 var options = {
-                    url: "../resources/data/glyphs.json",
-                    getValue: "glyph__name",
+                    url: "../resources/data/promoters.json",
+                    getValue: "glyph__type",
                     list: {
                         match: {
                             enabled: true
+                        },
+                        onClickEvent: function()
+                        {
+                            glyphFunctions.add($("#glyph-search-box").getValue());
                         },
                         maxNumberOfElements: 100
                     },
@@ -39,7 +43,6 @@
 
 
                 $("#glyph-search-box").easyAutocomplete(options);
-                console.log(options);
             });
 
     }
