@@ -13,20 +13,20 @@
 
         d3.queue()
             .defer(d3.json, '../resources/data/glyphs.json')
-            .await(function(error, glyphs){
+            .await(function(error, data1){
                 var idMap = {};
                 var dataMap = {};
 
 
-                var maxId = glyphs[glyphs.length - 1]._glyph__id+1;
+                var maxId = data1[data1.length - 1]._glyph__id+1;
 
-                glyphs.forEach(function(d) {dataMap[d._glyph__id] = d; idMap[d.glyph__name] = d._glyph__id});
+                data1.forEach(function(d) {dataMap[d._glyph__id] = d; idMap[d.glyph__name] = d._glyph__id});
 
                 //Creating instances for each visualization
 
                 var options = {
                     url: "../resources/data/glyphs.json",
-                    getValue: "_glyph__name",
+                    getValue: "glyph__name",
                     list: {
                         match: {
                             enabled: true
