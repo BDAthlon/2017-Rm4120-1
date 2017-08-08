@@ -20,10 +20,11 @@ public class Main {
 		int idVal = 0;
 		String idKey = "{\"glyph__idName\": ";
 		String metaIdKey = "\"glyph__metaId\": \"";
-
-		String nameKey = "\"glyph__type\": \"";
+		String urlLoc = "\"glyph__url\": \"";
+		String typeKey = "\"glyph__type\": \"";
 		String glyphType = "promoter";
 
+		
 		/*
 		 * "[
 		 * {"_glyph__id":xxx", _glyph__type:yyy"},
@@ -35,9 +36,10 @@ public class Main {
 		for(String file : inputFiles)
 		{
 			String tempId = idKey + idVal++ ;
-			String metaId = metaIdKey + file + "\"";
-			String tempName = nameKey + glyphType + "\"";
-			String stitch = tempId + "," + metaId + "," + tempName;
+			String tempMetaId = metaIdKey + "\"";
+			String tempUrl = urlLoc + "\"";
+			String tempType = typeKey + glyphType + "\"";
+			String stitch = tempId + "," + tempMetaId + "," + tempUrl + "," + tempType;
 			outputContent = outputContent + stitch + "}";
 			endList--;
 			
