@@ -9,7 +9,7 @@ function GlyphFunctions(data, _id, metaIds, types, urls, totalIds) {
 
     self.totalIds = totalIds;
 
-
+    self.glyphContains = [];
     self.isLoadedGlyph = false;
 
     for(var i = 0; i < totalIds; i++)
@@ -28,41 +28,60 @@ GlyphFunctions.prototype.init = function() {
 };
 
 
-GlyphFunctions.prototype.add = function(idName) {
+GlyphFunctions.prototype.add = function(gType) {
     var self = this;
-    console.log(idName);
 
     // Check to see if this promoter id exist
-    if(!(idName in self.metaIdMap))
+    if(!(gType in self.idMap))
     {
         return;
     }
 
-    var glyphIndex = idName;
+    var glyphIndexes = self.idMap[gType];
     var glyphData = self.data;
 
-    if(!self.glyphContains[glyphIndex])
-    {
-        self.glyphContains[glyphIndex] = true;
-        self.update();
-    }
+    self.update(glyphIndexes);
 };
 
-GlyphFunctions.prototype.update = function()
+GlyphFunctions.prototype.update = function(glyphIndex)
 {
     var self = this;
 
-    // If the view is not loaded, load it. Else, change to updated view
     if(!self.isLoadedGlyph)
     {
-        self.createCanvas();
+        var urlList = [];
+        glyphIndex.forEach(function(d)
+        {
+            urlList.push(self.urlMaps[d]);
+        });
+
+        // If the view is not loaded, load it.
+        self.createCanvas(urlList);
+    }
+    else
+    {
+        // Else, change to updated view
     }
 }
 
 
-GlyphFunctions.prototype.createCanvas = function() {
+GlyphFunctions.prototype.createCanvas = function(idName) {
     var self = this;
 
-    d3.select("#section");
+    //var imageSection = document.getElementById("#glyph-image");
+    console.log(idName)
+    var img = d3.select("#glyph-image").selectAll("img").data(idName);
+    img.exit().remove();
 
+    img = img.enter().append("img").merge(img);
+    img.attr("src", function(d) {return d;})
+        .attr("alt", "Glyphs")
+        .attr("height", 40)
+        .attr("width", 40);
+
+    //var newImage = new Image;
+    console.log(this.urlMaps[idName]);
+    //newImage.src =this.urlMaps[idName];
+    // console.log(newImage.src);
+    // imageSection.appendChild(newImage);
 };
