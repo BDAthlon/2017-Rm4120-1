@@ -18,22 +18,23 @@ public class Main {
 
 		int endList = inputFiles.size();
 		int idVal = 0;
-		String idKey = "{\"_glyph__id\": ";
+		String idKey = "{\"glyph__idName\": ";
 
-		String nameKey = "\"glyph__name\": \"";
+		String nameKey = "\"glyph__type\": \"";
+		String glyphType = "promoter";
 
 		/*
 		 * "[
-		 * {"_glyph__id":xxx", _glyph__name:yyy"},
-		 * {"_glyph__id":xxx", _glyph__name:yyy"}
+		 * {"_glyph__id":xxx", _glyph__type:yyy"},
+		 * {"_glyph__id":xxx", _glyph__type:yyy"}
 		 * ]
 		 */
 		String outputContent = "[";
 
 		for(String file : inputFiles)
 		{
-			String tempId = idKey + idVal++ ;
-			String tempName = nameKey + file + "\"";
+			String tempId = idKey + file ;
+			String tempName = nameKey + glyphType + "\"";
 			String stitch = tempId + "," + tempName;
 			outputContent = outputContent + stitch + "}";
 			endList--;
