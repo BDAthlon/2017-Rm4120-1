@@ -13,17 +13,16 @@
 
         d3.queue()
             .defer(d3.json, '../resources/data/glyphs.json')
-            .await(function(error, data1){
+            .await(function(error, glyphs){
                 var idMap = {};
-                var nameMap = {};
+                var dataMap = {};
 
-                var maxId = data1[data1.length - 1]._glyph__id+1;
 
-                data1.forEach(function(d) {nameMap[d._glyph__name] = d; idMap[d._glyph__id] = d._glyph__id});
+                var maxId = glyphs[glyphs.length - 1]._glyph__id+1;
+
+                glyphs.forEach(function(d) {dataMap[d._glyph__id] = d; idMap[d.glyph__name] = d._glyph__id});
+
                 //Creating instances for each visualization
-
-                var glyphChart = new glyphChar(nameMap, idMap, maxId);
-
 
                 var options = {
                     url: "../resources/data/glyphs.json",
@@ -31,9 +30,6 @@
                     list: {
                         match: {
                             enabled: true
-                        },
-                        onClickEvent: function() {
-                            glyphChart.add($("#glyph-search-box").val());
                         },
                         maxNumberOfElements: 100
                     },
@@ -43,7 +39,7 @@
 
 
                 $("#glyph-search-box").easyAutocomplete(options);
-
+                console.log(options);
             });
 
     }
