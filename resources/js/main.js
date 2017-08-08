@@ -23,16 +23,21 @@
                 var maxId = data1[data1.length - 1].glyph__idName+1;
 
                 data1.forEach(function(d) {dataMap[d.glyph__idName] = d;
-                                            idMap[d.glyph__type] = d.glyph__idName;
+                                            if(!(d.glyph__type in idMap))
+                                            {
+                                                idMap[d.glyph__type] = [];
+                                            }
+                                            idMap[d.glyph__type].push(d.glyph__idName);
                                             metaIdMap[d.glyph__idName] = d.glyph__metaId;
                                             typeMap[d.glyph__idName] = d.glyph__type;
                                             urlMap[d.glyph__idName] = d.glyph__url});
 
                 //Creating instances for each visualization
-                var glyphFunctions = new GlyphFunctions(data1, dataMap, metaIdMap, typeMap, urlMap, maxId);
+                //(data, _id, metaIds, types, urls, totalIds) {
+                var glyphFunctions = new GlyphFunctions(data1, idMap, metaIdMap, typeMap, urlMap, maxId);
                 var options = {
                     url: "../resources/data/promoters.json",
-                    getValue: "glyph__metaId",
+                    getValue: "glyph__type",
                     list: {
                         match: {
                             enabled: true
