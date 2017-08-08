@@ -1,6 +1,6 @@
 """
 
-Authors: Leandro Watanabe and Tramy Nguyen
+Authors: Leandro Watanabe and Tramy Nguyen and Meher Samineni
 
 """
 
