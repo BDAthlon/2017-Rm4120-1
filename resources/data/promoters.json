@@ -1,7 +1,7 @@
 [
   {"glyph__idName": 0,"glyph__metaId": "http://www.sequenceontology.org/browser/current_svn/term/SO:0000167","glyph__url": "https://github.com/BDAthlon/2017-Rm4120-1/blob/master/resources/figs/promoters/promoter.png?raw=true","glyph__type": "promoter"},
-  {"glyph__idName": 1,"glyph__metaId": "http://www.sequenceontology.org/browser/current_svn/term/SO:0000167","glyph__url": "https://github.com/BDAthlon/2017-Rm4120-1/blob/master/resources/figs/promoters/promoter2.png?raw=true","glyph__type": "promoter"},
-  {"glyph__idName": 2,"glyph__metaId": "http://www.sequenceontology.org/browser/current_svn/term/SO:0000167","glyph__url": "https://github.com/BDAthlon/2017-Rm4120-1/blob/master/resources/figs/promoters/promoter3.png?raw=true","glyph__type": "promoter"},
+  {"glyph__idName": 1,"glyph__metaId": "http://www.sequenceontology.org/browser/current_svn/term/SO:0000316","glyph__url": "https://github.com/BDAthlon/2017-Rm4120-1/blob/master/resources/figs/codingSequence/cds1.png?raw=true","glyph__type": "coding sequence"},
+  {"glyph__idName": 2,"glyph__metaId": "http://www.sequenceontology.org/browser/current_svn/term/SO:0000316","glyph__url": "https://github.com/BDAthlon/2017-Rm4120-1/blob/master/resources/figs/codingSequence/cds2.png?raw=true","glyph__type": "coding sequence"},
 
   {"glyph__idName": 2,"glyph__metaId": "http://www.sequenceontology.org/browser/current_svn/term/SO:0000141","glyph__url": "https://github.com/BDAthlon/2017-Rm4120-1/blob/master/resources/figs/terminator/terminator.png?raw=true","glyph__type": "terminator"},
 
