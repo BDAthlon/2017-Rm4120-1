@@ -12,47 +12,37 @@
 
 
         d3.queue()
-            .defer(d3.json, '../resources/data/drugs.json')
-            .defer(d3.json, '../resources/data/sideeffects.json')
-            .defer(d3.json, '../resources/data/statistics.json')
-            .defer(d3.json, '../resources/data/treatments.json')
-            .await(function(error, data1, data2, data3, data4){
+            .defer(d3.json, '../resources/data/glyphs.json')
+            .await(function(error, data1){
                 var idMap = {};
-                var dataMap = {};
-                var effectsMap = {};
-                var statsMap = {};
-                var treatMap = {};
+                var nameMap = {};
 
-                var maxId = data1[data1.length - 1]._Drug__id+1;
+                var maxId = data1[data1.length - 1]._glyph__id+1;
 
-                data1.forEach(function(d) {dataMap[d._Drug__id] = d; idMap[d._Drug__name] = d._Drug__id});
-                data2.forEach(function(d) {effectsMap[d._DrugSideEffects__id] = d});
-                data3.forEach(function(d) {statsMap[d._DrugStatistics__id] = d});
-                data4.forEach(function(d) {treatMap[d._DrugTreatment__id] = d});
-
+                data1.forEach(function(d) {nameMap[d._glyph__id] = d; idMap[d._glyph__name] = d._glyph__id});
                 //Creating instances for each visualization
 
-                var interactionChart = new InteractionChart(dataMap, effectsMap, statsMap, treatMap, idMap, maxId);
+                var interactionChart = new InteractionChart(dataMap, idMap, maxId);
 
 
                 var options = {
-                    url: "../resources/data/drugs.json",
-                    getValue: "_Drug__name",
+                    url: "../resources/data/glyphs.json",
+                    getValue: "_glyph__name",
                     list: {
                         match: {
                             enabled: true
                         },
                         onClickEvent: function() {
-                            interactionChart.add($("#drug-search-box").val());
+                            interactionChart.add($("#glyph-search-box").val());
                         },
-                        maxNumberOfElements: 6
+                        maxNumberOfElements: 100
                     },
-                    placeholder:"Search for a drug",
+                    placeholder:"Search for a glyph",
                     theme: "plate-dark"
                 };
 
 
-                $("#drug-search-box").easyAutocomplete(options);
+                $("#glyph-search-box").easyAutocomplete(options);
 
             });
 

@@ -1,4 +1,4 @@
-function StatisticsChart(statistics_data) {
+function glyph_chart(statistics_data) {
     var self = this;
     self.statistics_data = statistics_data;
     self.statsActive = false;
