@@ -1,1 +1,10 @@
-[{"glyph__idName": 0,"glyph__metaId": "","glyph__url": "","glyph__type": "promoter"},{"glyph__idName": 1,"glyph__metaId": "","glyph__url": "","glyph__type": "promoter"},{"glyph__idName": 2,"glyph__metaId": "","glyph__url": "","glyph__type": "promoter"}]
+[
+  {"glyph__idName": 0,"glyph__metaId": "http://www.sequenceontology.org/browser/current_svn/term/SO:0000167","glyph__url": "https://github.com/BDAthlon/2017-Rm4120-1/blob/master/resources/figs/promoters/promoter.png","glyph__type": "promoter"},
+  {"glyph__idName": 1,"glyph__metaId": "http://www.sequenceontology.org/browser/current_svn/term/SO:0000167","glyph__url": "https://github.com/BDAthlon/2017-Rm4120-1/blob/master/resources/figs/promoters/promoter2.png","glyph__type": "promoter"},
+  {"glyph__idName": 2,"glyph__metaId": "http://www.sequenceontology.org/browser/current_svn/term/SO:0000167","glyph__url": "https://github.com/BDAthlon/2017-Rm4120-1/blob/master/resources/figs/promoters/promoter3.png","glyph__type": "promoter"},
+
+  {"glyph__idName": 2,"glyph__metaId": "http://www.sequenceontology.org/browser/current_svn/term/SO:0000141","glyph__url": "https://github.com/BDAthlon/2017-Rm4120-1/blob/master/resources/figs/terminator/terminator.png","glyph__type": "terminator"},
+
+  {"glyph__idName": 2,"glyph__metaId": "http://www.sequenceontology.org/browser/current_svn/term/SO:0000409","glyph__url": "https://github.com/BDAthlon/2017-Rm4120-1/blob/master/resources/figs/ribosomeEntrySites/ribosome-entry-site.png","glyph__type": "ribosome binding site"}
+
+]
