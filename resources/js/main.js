@@ -19,10 +19,10 @@
 
                 var maxId = data1[data1.length - 1]._glyph__id+1;
 
-                data1.forEach(function(d) {nameMap[d._glyph__id] = d; idMap[d._glyph__name] = d._glyph__id});
+                data1.forEach(function(d) {nameMap[d._glyph__name] = d; idMap[d._glyph__id] = d._glyph__id});
                 //Creating instances for each visualization
 
-                var interactionChart = new InteractionChart(dataMap, idMap, maxId);
+                var glyphChart = new glyphChar(nameMap, idMap, maxId);
 
 
                 var options = {
@@ -33,7 +33,7 @@
                             enabled: true
                         },
                         onClickEvent: function() {
-                            interactionChart.add($("#glyph-search-box").val());
+                            glyphChart.add($("#glyph-search-box").val());
                         },
                         maxNumberOfElements: 100
                     },

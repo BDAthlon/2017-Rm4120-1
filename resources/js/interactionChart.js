@@ -1,15 +1,10 @@
 
 
-function InteractionChart(data, sideEffects_data, statistics_data,  treatments_data, idMap, n) {
+function InteractionChart(data, idMap, n) {
     var self = this;
     self.data = data;
-    self.drugSelection = [];
     self.idMap = idMap;
-    self.statisticsChart = new StatisticsChart(statistics_data);
-    self.treatmentsChart = new TreatmentsChart(treatments_data);
-    self.sideEffects = sideEffects_data;
     self.boxesWidth = [];
-    self.drugContains = [];
     self.interactionActive = false;
 
     for(var i = 0; i < n; i++)
