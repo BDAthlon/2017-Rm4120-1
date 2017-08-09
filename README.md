@@ -10,7 +10,11 @@ Users are required to have Python 3.0 installed which is located here: https://w
 
 ## Run Instructions
 
-First, users are required to clone or download the project. Once they have acquired a version of the project, they will need to open an instance of a server. To do that, they will need to open python and enter in the following command in the terminal: "python3 -m http.server 8080". Then, users will need to navigate to the downloaded project and open the file 'index.html' with a web browser (recommended Google Chrome). Once the web browser is started, in the search bar, users will be to type 'localhost 8080'.
+1. Users are required to clone or download the project.
+2. Open python and enter in the following command in the terminal: "python3 -m http.server 8080". They will need to open an instance of a server
+3. Navigate to the downloaded project. 
+4. Open the file 'index.html' with a web browser (recommended Google Chrome).
+5. In the open web browser, type 'localhost 8080' in the search bar. 
 
 You have now accessed GlyphViz! Please search away!
 
